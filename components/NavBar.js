@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function NavBar() {
   return (
-    <nav className="bg-gray-800 fixed w-full z-10 top-0">
+    <nav id="navbar" className="bg-gray-800 fixed w-full z-10 top-0 opacity-0 transition-opacity duration-1000">
       <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
         <div className="pl-4 flex items-center">
           <Link href="/" passHref>
@@ -22,7 +22,7 @@ export default function NavBar() {
           >
             <svg
               className="fill-current h-6 w-6"
-              viewBox="0 0 24 24"
+              viewBox="0 0 24 0"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path d="M4 5h16M4 11h16M4 17h16" />
@@ -35,28 +35,21 @@ export default function NavBar() {
         >
           <ul className="list-reset lg:flex justify-end flex-1 items-center">
             <li className="mr-3">
-              <Link href="/" passHref>
-                <a className="inline-block py-2 px-4 text-white font-bold no-underline hover:text-shadow-white-glow">
-                  Home
-                </a>
-              </Link>
-            </li>
-            <li className="mr-3">
-              <Link href="/about" passHref>
+              <Link href="#about" passHref>
                 <a className="inline-block py-2 px-4 text-white font-bold no-underline hover:text-shadow-white-glow">
                   About
                 </a>
               </Link>
             </li>
             <li className="mr-3">
-              <Link href="/projects" passHref>
+              <Link href="#projects" passHref>
                 <a className="inline-block py-2 px-4 text-white font-bold no-underline hover:text-shadow-white-glow">
                   Projects
                 </a>
               </Link>
             </li>
             <li className="mr-3">
-              <Link href="/contact" passHref>
+              <Link href="#contact" passHref>
                 <a className="inline-block py-2 px-4 text-white font-bold no-underline hover:text-shadow-white-glow">
                   Contact
                 </a>
