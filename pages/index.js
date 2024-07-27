@@ -2,8 +2,24 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import {
+  faLinkedin, faGithub, faReact, faHtml5, faJsSquare,
+} from '@fortawesome/free-brands-svg-icons';
+import {
+  SiFirebase, SiDotnet, SiNextdotjs, SiCsharp, SiPostman, SiPostgresql,
+} from 'react-icons/si';
+import Image from 'next/image';
 import NavBar from '../components/NavBar';
+import ProjectCard from '../components/cards/ProjectCard';
+
+const projects = [
+  {
+    title: 'DM Campaign Manager',
+    description: 'A web app for managing Dungeons & Dragons campaigns.',
+    link: 'https://dmcm.netlify.app/',
+    image: '/dmcm.png',
+  },
+];
 
 function Home() {
   useEffect(() => {
@@ -67,10 +83,13 @@ function Home() {
         </Link>
       </div>
 
+      {/* Blank Section for Scrolling Distance */}
+      <section className="h-32 md:h-64" />
+
       <section id="about" className="section opacity-0 transition-opacity duration-1000 text-center flex flex-col justify-center items-center h-auto md:h-screen p-4 md:p-8 max-w-4xl mx-auto pt-20">
         <div className="flex flex-col md:flex-row items-center bg-gray-700 text-white rounded-3xl p-4 md:p-8">
           <div className="md:w-1/3 w-full flex justify-center md:justify-start mb-4 md:mb-0">
-            <img src="/nw-pic.jpg" alt="Nathan Welton" className="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover" />
+            <Image src="/nw-pic.jpg" alt="Nathan Welton" width={256} height={256} className="rounded-full object-cover" />
           </div>
           <div className="md:w-2/3 w-full md:pl-8">
             <h1 className="text-2xl md:text-4xl font-bold mb-4">About Me</h1>
@@ -84,10 +103,39 @@ function Home() {
         </div>
       </section>
 
+      {/* Blank Section for Scrolling Distance */}
+      <section className="h-32 md:h-64" />
+
+      {/* Tech Section */}
+      <section className="section opacity-0 transition-opacity duration-1000 flex flex-col justify-center items-center p-4 md:p-8">
+        <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">Technologies</h2>
+        <div className="flex flex-wrap justify-center gap-4">
+          <FontAwesomeIcon icon={faReact} className="tech-icon text-blue-400" />
+          <FontAwesomeIcon icon={faHtml5} className="tech-icon text-orange-500" />
+          <FontAwesomeIcon icon={faJsSquare} className="tech-icon text-yellow-500" />
+          <SiFirebase className="tech-icon text-yellow-400" />
+          <SiDotnet className="tech-icon text-purple-500" />
+          <SiNextdotjs className="tech-icon text-white" />
+          <SiCsharp className="tech-icon text-purple-600" />
+          <SiPostman className="tech-icon text-orange-500" />
+          <SiPostgresql className="tech-icon text-blue-500" />
+        </div>
+      </section>
+
+      {/* Blank Section for Scrolling Distance */}
+      <section className="h-32 md:h-64" />
+
       <section id="projects" className="section opacity-0 transition-opacity duration-1000 h-auto md:h-screen flex flex-col justify-center items-center p-4 md:p-8">
         <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">Projects</h2>
-        {/* Add your projects content here */}
+        <div className="flex flex-wrap justify-center gap-4">
+          {projects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
       </section>
+
+      {/* Blank Section for Scrolling Distance */}
+      <section className="h-32 md:h-64" />
 
       <section id="contact" className="section opacity-0 transition-opacity duration-1000 h-auto md:h-screen flex flex-col justify-center items-center p-4 md:p-8">
         <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">Contact</h2>
@@ -113,7 +161,6 @@ function Home() {
           >
             <FontAwesomeIcon icon={faGithub} size="2x" />
           </a>
-
         </div>
       </section>
     </div>
