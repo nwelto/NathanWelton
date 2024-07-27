@@ -40,3 +40,8 @@ a {
 .transition-opacity {
   transition: opacity 1s;
 }
+
+.tech-icon {
+  width: 40px;
+  height: 40px;
+}

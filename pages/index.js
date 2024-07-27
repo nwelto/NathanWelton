@@ -2,8 +2,24 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import {
+  faLinkedin, faGithub, faReact, faHtml5, faJsSquare,
+} from '@fortawesome/free-brands-svg-icons';
+import {
+  SiFirebase, SiDotnet, SiNextdotjs, SiCsharp, SiPostman, SiPostgresql,
+} from 'react-icons/si';
+import Image from 'next/image';
 import NavBar from '../components/NavBar';
+import ProjectCard from '../components/cards/ProjectCard';
+
+const projects = [
+  {
+    title: 'DM Campaign Manager',
+    description: 'A web app for managing Dungeons & Dragons campaigns.',
+    link: 'https://dmcm.netlify.app/',
+    image: '/dmcm.png',
+  },
+];
 
 function Home() {
   useEffect(() => {
@@ -46,54 +62,86 @@ function Home() {
   return (
     <div className="min-h-screen">
       <NavBar />
-      <header id="header" className="text-white text-6xl font-bold my-8 text-center transition-opacity duration-1000">
+      <header id="header" className="text-white text-4xl md:text-6xl font-bold my-8 text-center transition-opacity duration-1000">
         Nathan Welton
       </header>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 max-w-6xl w-full mx-auto">
         <Link href="#about" passHref>
-          <a className="col-span-2 md:col-span-1 bg-gray-900 text-white rounded-3xl p-8 text-center flex justify-center items-center cursor-pointer text-2xl font-bold">
+          <a className="col-span-2 md:col-span-1 bg-gray-900 text-white rounded-3xl p-4 md:p-8 text-center flex justify-center items-center cursor-pointer text-lg md:text-2xl font-bold">
             About
           </a>
         </Link>
         <Link href="#projects" passHref>
-          <a className="col-span-2 md:col-span-1 bg-white text-black rounded-3xl p-8 text-center flex justify-center items-center cursor-pointer text-2xl font-bold">
+          <a className="col-span-2 md:col-span-1 bg-white text-black rounded-3xl p-4 md:p-8 text-center flex justify-center items-center cursor-pointer text-lg md:text-2xl font-bold">
             Projects
           </a>
         </Link>
         <Link href="#contact" passHref>
-          <a className="col-span-2 bg-yellow-400 text-black rounded-3xl p-8 text-center flex justify-center items-center cursor-pointer text-2xl font-bold">
+          <a className="col-span-2 bg-yellow-400 text-black rounded-3xl p-4 md:p-8 text-center flex justify-center items-center cursor-pointer text-lg md:text-2xl font-bold">
             Contact
           </a>
         </Link>
       </div>
 
-      <section id="about" className="section opacity-0 transition-opacity duration-1000 text-center flex flex-col justify-center items-center h-screen p-8 max-w-4xl mx-auto pt-20">
-        <div className="flex flex-col md:flex-row items-center bg-gray-700 text-white rounded-3xl p-8">
-          <div className="md:w-1/3 w-full flex justify-center md:justify-start mb-8 md:mb-0">
-            <img src="/nw-pic.jpg" alt="Nathan Welton" className="rounded-full w-64 h-64 object-cover" />
+      {/* Blank Section for Scrolling Distance */}
+      <section className="h-32 md:h-64" />
+
+      <section id="about" className="section opacity-0 transition-opacity duration-1000 text-center flex flex-col justify-center items-center h-auto md:h-screen p-4 md:p-8 max-w-4xl mx-auto pt-20">
+        <div className="flex flex-col md:flex-row items-center bg-gray-700 text-white rounded-3xl p-4 md:p-8">
+          <div className="md:w-1/3 w-full flex justify-center md:justify-start mb-4 md:mb-0">
+            <Image src="/nw-pic.jpg" alt="Nathan Welton" width={256} height={256} className="rounded-full object-cover" />
           </div>
           <div className="md:w-2/3 w-full md:pl-8">
-            <h1 className="text-4xl font-bold mb-4">About Me</h1>
-            <p className="text-lg mb-4">
+            <h1 className="text-2xl md:text-4xl font-bold mb-4">About Me</h1>
+            <p className="text-base md:text-lg mb-4">
               I’m a passionate and driven software developer who started diving into the world of coding in January 2023. My background in leadership and strategic roles has given me a unique perspective on problem-solving and teamwork, which I now bring to my software projects.
             </p>
-            <p className="text-lg mb-2">
+            <p className="text-base md:text-lg mb-2">
               {'Since starting my journey, I\'ve been exploring everything from front-end frameworks to back-end systems, focusing on creating impactful software solutions that enhance user experiences and make a difference in people\'s lives.'}
             </p>
           </div>
         </div>
       </section>
 
-      <section id="projects" className="section opacity-0 transition-opacity duration-1000 h-screen flex flex-col justify-center items-center p-8">
-        <h2 className="text-4xl font-bold mb-4 text-white">Projects</h2>
-        {/* Add your projects content here */}
+      {/* Blank Section for Scrolling Distance */}
+      <section className="h-32 md:h-64" />
+
+      {/* Tech Section */}
+      <section className="section opacity-0 transition-opacity duration-1000 flex flex-col justify-center items-center p-4 md:p-8">
+        <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">Technologies</h2>
+        <div className="flex flex-wrap justify-center gap-4">
+          <FontAwesomeIcon icon={faReact} className="tech-icon text-blue-400" />
+          <FontAwesomeIcon icon={faHtml5} className="tech-icon text-orange-500" />
+          <FontAwesomeIcon icon={faJsSquare} className="tech-icon text-yellow-500" />
+          <SiFirebase className="tech-icon text-yellow-400" />
+          <SiDotnet className="tech-icon text-purple-500" />
+          <SiNextdotjs className="tech-icon text-white" />
+          <SiCsharp className="tech-icon text-purple-600" />
+          <SiPostman className="tech-icon text-orange-500" />
+          <SiPostgresql className="tech-icon text-blue-500" />
+        </div>
       </section>
 
-      <section id="contact" className="section opacity-0 transition-opacity duration-1000 h-screen flex flex-col justify-center items-center p-8">
-        <h2 className="text-4xl font-bold mb-4 text-white">Contact</h2>
-        <p className="text-lg text-white">Phone: 573-380-5105</p>
-        <p className="text-lg text-white">Email: nathopp@gmail.com</p>
-        <div className="flex space-x-4 mt-4">
+      {/* Blank Section for Scrolling Distance */}
+      <section className="h-32 md:h-64" />
+
+      <section id="projects" className="section opacity-0 transition-opacity duration-1000 h-auto md:h-screen flex flex-col justify-center items-center p-4 md:p-8">
+        <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">Projects</h2>
+        <div className="flex flex-wrap justify-center gap-4">
+          {projects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
+      </section>
+
+      {/* Blank Section for Scrolling Distance */}
+      <section className="h-32 md:h-64" />
+
+      <section id="contact" className="section opacity-0 transition-opacity duration-1000 h-auto md:h-screen flex flex-col justify-center items-center p-4 md:p-8">
+        <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">Contact</h2>
+        <p className="text-base md:text-lg text-white">Phone: 573-380-5105</p>
+        <p className="text-base md:text-lg text-white">Email: nathopp@gmail.com</p>
+        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mt-4">
           <a
             href="https://www.linkedin.com/in/nathan-j-welton/"
             target="_blank"
@@ -113,7 +161,6 @@ function Home() {
           >
             <FontAwesomeIcon icon={faGithub} size="2x" />
           </a>
-
         </div>
       </section>
     </div>
