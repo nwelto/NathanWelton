@@ -6,7 +6,7 @@ import {
   faLinkedin, faGithub, faReact, faHtml5, faJsSquare,
 } from '@fortawesome/free-brands-svg-icons';
 import {
-  SiFirebase, SiDotnet, SiNextdotjs, SiCsharp, SiPostman, SiPostgresql,
+  SiFirebase, SiDotnet, SiNextdotjs, SiCsharp, SiPostman, SiPostgresql, SiVisualstudiocode, SiVisualstudio, SiNodedotjs,
 } from 'react-icons/si';
 import Image from 'next/image';
 import NavBar from '../components/NavBar';
@@ -65,28 +65,37 @@ function Home() {
       <header id="header" className="text-white text-4xl md:text-6xl font-bold my-8 text-center transition-opacity duration-1000">
         Nathan Welton
       </header>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 max-w-6xl w-full mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-2 p-4 max-w-6xl w-full mx-auto">
         <Link href="#about" passHref>
-          <a className="col-span-2 md:col-span-1 bg-gray-900 text-white rounded-3xl p-4 md:p-8 text-center flex justify-center items-center cursor-pointer text-lg md:text-2xl font-bold">
+          <a className="col-span-1 bg-gray-900 text-white rounded-3xl p-4 text-center flex justify-center items-center cursor-pointer text-lg font-bold">
             About
           </a>
         </Link>
         <Link href="#projects" passHref>
-          <a className="col-span-2 md:col-span-1 bg-white text-black rounded-3xl p-4 md:p-8 text-center flex justify-center items-center cursor-pointer text-lg md:text-2xl font-bold">
+          <a className="col-span-1 bg-white text-black rounded-3xl p-4 text-center flex justify-center items-center cursor-pointer text-lg font-bold">
             Projects
           </a>
         </Link>
+        <Link href="#technologies-resume" passHref>
+          <a className="col-span-1 bg-blue-400 text-black rounded-3xl p-4 text-center flex justify-center items-center cursor-pointer text-lg font-bold">
+            Technologies
+          </a>
+        </Link>
+        <Link href="#technologies-resume" passHref>
+          <a className="col-span-1 bg-green-400 text-black rounded-3xl p-4 text-center flex justify-center items-center cursor-pointer text-lg font-bold">
+            Resume
+          </a>
+        </Link>
         <Link href="#contact" passHref>
-          <a className="col-span-2 bg-yellow-400 text-black rounded-3xl p-4 md:p-8 text-center flex justify-center items-center cursor-pointer text-lg md:text-2xl font-bold">
+          <a className="col-span-2 md:col-span-1 bg-yellow-400 text-black rounded-3xl p-4 text-center flex justify-center items-center cursor-pointer text-lg md:text-2xl font-bold">
             Contact
           </a>
         </Link>
       </div>
 
-      {/* Blank Section for Scrolling Distance */}
-      <section className="h-32 md:h-64" />
+      <hr className="w-4/5 border-t border-purple-600 mx-auto mt-8 mb-20" />
 
-      <section id="about" className="section opacity-0 transition-opacity duration-1000 text-center flex flex-col justify-center items-center h-auto md:h-screen p-4 md:p-8 max-w-4xl mx-auto pt-20">
+      <section id="about" className="section opacity-0 transition-opacity duration-1000 text-center flex flex-col justify-center items-center h-auto md:h-screen p-4 md:p-8 max-w-4xl mx-auto">
         <div className="flex flex-col md:flex-row items-center bg-gray-700 text-white rounded-3xl p-4 md:p-8">
           <div className="md:w-1/3 w-full flex justify-center md:justify-start mb-4 md:mb-0">
             <Image src="/nw-pic.jpg" alt="Nathan Welton" width={256} height={256} className="rounded-full object-cover" />
@@ -103,27 +112,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Blank Section for Scrolling Distance */}
-      <section className="h-32 md:h-64" />
-
-      {/* Tech Section */}
-      <section className="section opacity-0 transition-opacity duration-1000 flex flex-col justify-center items-center p-4 md:p-8">
-        <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">Technologies</h2>
-        <div className="flex flex-wrap justify-center gap-4">
-          <FontAwesomeIcon icon={faReact} className="tech-icon text-blue-400" />
-          <FontAwesomeIcon icon={faHtml5} className="tech-icon text-orange-500" />
-          <FontAwesomeIcon icon={faJsSquare} className="tech-icon text-yellow-500" />
-          <SiFirebase className="tech-icon text-yellow-400" />
-          <SiDotnet className="tech-icon text-purple-500" />
-          <SiNextdotjs className="tech-icon text-white" />
-          <SiCsharp className="tech-icon text-purple-600" />
-          <SiPostman className="tech-icon text-orange-500" />
-          <SiPostgresql className="tech-icon text-blue-500" />
-        </div>
-      </section>
-
-      {/* Blank Section for Scrolling Distance */}
-      <section className="h-32 md:h-64" />
+      <hr className="w-4/5 border-t border-purple-600 mx-auto mt-20 mb-20" />
 
       <section id="projects" className="section opacity-0 transition-opacity duration-1000 h-auto md:h-screen flex flex-col justify-center items-center p-4 md:p-8">
         <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">Projects</h2>
@@ -134,8 +123,40 @@ function Home() {
         </div>
       </section>
 
-      {/* Blank Section for Scrolling Distance */}
-      <section className="h-32 md:h-64" />
+      <hr className="w-4/5 border-t border-purple-600 mx-auto mt-20 mb-20" />
+
+      <section id="technologies-resume" className="section opacity-0 transition-opacity duration-1000 flex flex-col md:flex-row justify-center items-center p-4 md:p-8">
+        <div className="w-full md:w-1/2 text-center md:text-left">
+          <h2 className="text-2xl margin-bottom:100px md:text-4xl font-bold mb-4 text-white">Technologies</h2>
+          <div className="tight-grid">
+            <FontAwesomeIcon icon={faReact} className="tech-icon text-blue-400" />
+            <FontAwesomeIcon icon={faHtml5} className="tech-icon text-orange-500" />
+            <FontAwesomeIcon icon={faJsSquare} className="tech-icon text-yellow-500" />
+            <SiFirebase className="tech-icon text-yellow-400" />
+            <SiDotnet className="tech-icon text-purple-500" />
+            <SiNextdotjs className="tech-icon text-white" />
+            <SiCsharp className="tech-icon text-purple-600" />
+            <SiPostman className="tech-icon text-orange-500" />
+            <SiPostgresql className="tech-icon text-blue-500" />
+            <SiVisualstudiocode className="tech-icon text-blue-500" />
+            <SiVisualstudio className="tech-icon text-purple-700" />
+            <SiNodedotjs className="tech-icon text-green-500" />
+          </div>
+        </div>
+        <div className="w-full md:w-1/2 flex flex-col items-center justify-center mt-8 md:mt-0">
+          <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">Resume</h2>
+          <a
+            href="/Nathan Welton - Software Developer.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-center flex justify-center items-center cursor-pointer"
+          >
+            <Image src="/resumebtn.png" alt="Resume Thumbnail" width={200} height={250} className="rounded-lg" />
+          </a>
+        </div>
+      </section>
+
+      <hr className="w-4/5 border-t border-purple-600 mx-auto mt-20 mb-20" />
 
       <section id="contact" className="section opacity-0 transition-opacity duration-1000 h-auto md:h-screen flex flex-col justify-center items-center p-4 md:p-8">
         <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">Contact</h2>
@@ -163,6 +184,8 @@ function Home() {
           </a>
         </div>
       </section>
+
+      <hr className="w-4/5 border-t border-purple-600 mx-auto mt-20 mb-20" />
     </div>
   );
 }
