@@ -143,7 +143,7 @@ function Home() {
         <p className="text-base md:text-lg text-white">Email: nathopp@gmail.com</p>
         <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mt-4">
           <a
-            href="https://www.linkedin.com/in/nathan-j-welton/"
+            href="https://www.linkedin.com/in/nwelto/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white"
